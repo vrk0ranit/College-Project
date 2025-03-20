@@ -56,11 +56,12 @@ const Header = ({ activeHeading }) => {
       <div className={`${styles.section}`}>
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
-            <Link to="/">
-              <img
+            <Link to="/" className="text-4xl font-bold text-[#3321c8] hover:text-[#3bc177] transition duration-300 ease-in-out">
+              {/* <img
                 src="https://shopo.quomodothemes.website/assets/images/logo.svg"
                 alt=""
-              />
+              /> */}
+              DecorEase
             </Link>
           </div>
           {/* search box */}

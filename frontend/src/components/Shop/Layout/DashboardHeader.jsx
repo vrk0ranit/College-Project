@@ -11,12 +11,16 @@ const DashboardHeader = () => {
   return (
     <div className="w-full h-[80px] bg-white shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4">
       <div>
-        <Link to="/dashboard">
+        {/* <Link to="/dashboard">
           <img
             src="https://shopo.quomodothemes.website/assets/images/logo.svg"
             alt=""
           />
+        </Link> */}
+        <Link to="/" className="text-4xl font-bold text-[#3321c8] hover:text-[#3bc177] transition duration-300 ease-in-out">
+          DecorEase
         </Link>
+
       </div>
       <div className="flex items-center">
         <div className="flex items-center mr-4">
