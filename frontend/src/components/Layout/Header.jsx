@@ -118,7 +118,7 @@ const Header = ({ activeHeading }) => {
         >
           {/* categories */}
           <div onClick={() => setDropDown(!dropDown)}>
-            <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
+            <div className="relative h-[40px] mt-[10px] w-[270px] hidden 1000px:block">
               <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
               <button
                 className={`h-[100%] w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
@@ -216,12 +216,13 @@ const Header = ({ activeHeading }) => {
             />
           </div>
           <div>
-            <Link to="/">
-              <img
+            <Link to="/"  className="text-4xl font-bold text-[#3321c8] hover:text-[#3bc177] transition duration-300 ease-in-out">
+              {/* <img
                 src="https://shopo.quomodothemes.website/assets/images/logo.svg"
                 alt=""
                 className="mt-3 cursor-pointer"
-              />
+              /> */}
+              DecorEase
             </Link>
           </div>
           <div>

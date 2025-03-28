@@ -11,12 +11,12 @@ import { toast } from "react-toastify";
 const Checkout = () => {
   const { user } = useSelector((state) => state.user);
   const { cart } = useSelector((state) => state.cart);
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("IN");
   const [city, setCity] = useState("");
   const [userInfo, setUserInfo] = useState(false);
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
-  const [zipCode, setZipCode] = useState(null);
+  const [pinCode, setPinCode] = useState(null);
   const [couponCode, setCouponCode] = useState("");
   const [couponCodeData, setCouponCodeData] = useState(null);
   const [discountPrice, setDiscountPrice] = useState(null);
@@ -27,13 +27,13 @@ const Checkout = () => {
   }, []);
 
   const paymentSubmit = () => {
-   if(address1 === "" || address2 === "" || zipCode === null || country === "" || city === ""){
+   if(address1 === "" || address2 === "" || pinCode === null || country === "" || city === ""){
       toast.error("Please choose your delivery address!")
    } else{
     const shippingAddress = {
       address1,
       address2,
-      zipCode,
+      pinCode,
       country,
       city,
     };
@@ -118,8 +118,8 @@ const Checkout = () => {
             setAddress1={setAddress1}
             address2={address2}
             setAddress2={setAddress2}
-            zipCode={zipCode}
-            setZipCode={setZipCode}
+            pinCode={pinCode}
+            setPinCode={setPinCode}
           />
         </div>
         <div className="w-full 800px:w-[35%] 800px:mt-0 mt-8">
@@ -156,8 +156,8 @@ const ShippingInfo = ({
   setAddress1,
   address2,
   setAddress2,
-  zipCode,
-  setZipCode,
+  pinCode,
+  setPinCode,
 }) => {
   return (
     <div className="w-full 800px:w-[95%] bg-white rounded-md p-5 pb-8">
@@ -196,11 +196,11 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Zip Code</label>
+            <label className="block pb-2">Pin Code</label>
             <input
               type="number"
-              value={zipCode}
-              onChange={(e) => setZipCode(e.target.value)}
+              value={pinCode}
+              onChange={(e) => setPinCode(e.target.value)}
               required
               className={`${styles.input}`}
             />
@@ -289,7 +289,7 @@ const ShippingInfo = ({
                   onClick={() =>
                     setAddress1(item.address1) ||
                     setAddress2(item.address2) ||
-                    setZipCode(item.zipCode) ||
+                    setPinCode(item.pinCode) ||
                     setCountry(item.country) ||
                     setCity(item.city)
                   }
@@ -316,21 +316,21 @@ const CartData = ({
     <div className="w-full bg-[#fff] rounded-md p-5 pb-8">
       <div className="flex justify-between">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">subtotal:</h3>
-        <h5 className="text-[18px] font-[600]">${subTotalPrice}</h5>
+        <h5 className="text-[18px] font-[600]">₹{subTotalPrice}</h5>
       </div>
       <br />
       <div className="flex justify-between">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">shipping:</h3>
-        <h5 className="text-[18px] font-[600]">${shipping.toFixed(2)}</h5>
+        <h5 className="text-[18px] font-[600]">₹{shipping.toFixed(2)}</h5>
       </div>
       <br />
       <div className="flex justify-between border-b pb-3">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">Discount:</h3>
         <h5 className="text-[18px] font-[600]">
-          - {discountPercentenge ? "$" + discountPercentenge.toString() : null}
+          - ₹{discountPercentenge ? + discountPercentenge.toString() : null}
         </h5>
       </div>
-      <h5 className="text-[18px] font-[600] text-end pt-3">${totalPrice}</h5>
+      <h5 className="text-[18px] font-[600] text-end pt-3">₹{totalPrice}</h5>
       <br />
       <form onSubmit={handleSubmit}>
         <input

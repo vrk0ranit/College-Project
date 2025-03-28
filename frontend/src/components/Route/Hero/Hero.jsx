@@ -5,7 +5,7 @@ import styles from "../../../styles/styles";
 const Hero = () => {
   return (
     <div
-      className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-no-repeat ${styles.noramlFlex}`}
+      className={`relative min-h-[30vh] 800px:min-h-[50vh] w-full bg-no-repeat ${styles.noramlFlex}`}
       style={{
         backgroundImage:
           "url(https://themes.rslahmed.dev/rafcart/assets/images/banner-2.jpg)",
@@ -18,10 +18,9 @@ const Hero = () => {
           Best Collection for <br /> home Decoration
         </h1>
         <p className="pt-5 text-[16px] font-[Poppins] font-[400] text-[#000000ba]">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae,
-          assumenda? Quisquam itaque <br /> exercitationem labore vel, dolore
-          quidem asperiores, laudantium temporibus soluta optio consequatur{" "}
-          <br /> aliquam deserunt officia. Dolorum saepe nulla provident.
+          Transform your living space into a sanctuary with our carefully curated collection.
+          <br /> From stylish furniture to elegant wall art, every piece is chosen to complement your home’s unique charm.
+          <br /> Elevate your home decor with timeless pieces that add warmth, personality, and style to your space.
         </p>
         <Link to="/products" className="inline-block">
             <div className={`${styles.button} mt-5`}>

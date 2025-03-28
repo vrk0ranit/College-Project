@@ -267,7 +267,7 @@ const AllOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total: "₹" + item.totalPrice,
         status: item.status,
       });
     });
@@ -355,7 +355,7 @@ const AllRefundOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total: "₹ " + item.totalPrice,
         status: item.status,
       });
     });
@@ -440,7 +440,7 @@ const TrackOrder = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total: "₹" + item.totalPrice,
         status: item.status,
       });
     });
@@ -539,7 +539,7 @@ const Address = () => {
   const [open, setOpen] = useState(false);
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
-  const [zipCode, setZipCode] = useState();
+  const [pinCode, setPinCode] = useState();
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
   const [addressType, setAddressType] = useState("");
@@ -570,7 +570,7 @@ const Address = () => {
           city,
           address1,
           address2,
-          zipCode,
+          pinCode,
           addressType
         )
       );
@@ -579,7 +579,7 @@ const Address = () => {
       setCity("");
       setAddress1("");
       setAddress2("");
-      setZipCode(null);
+      setPinCode(null);
       setAddressType("");
     }
   };
@@ -679,13 +679,13 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Zip Code</label>
+                    <label className="block pb-2">Pin Code</label>
                     <input
                       type="number"
                       className={`${styles.input}`}
                       required
-                      value={zipCode}
-                      onChange={(e) => setZipCode(e.target.value)}
+                      value={pinCode}
+                      onChange={(e) => setPinCode(e.target.value)}
                     />
                   </div>
 

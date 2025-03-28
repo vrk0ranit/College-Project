@@ -42,7 +42,7 @@ const shopSchema = new mongoose.Schema({
       required: true,
     },
   },
-  zipCode: {
+  pinCode: {
     type: Number,
     required: true,
   },
