@@ -4,13 +4,23 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const server = http.createServer(app);
-const io = socketIO(server);
+const io = socketIO(server, {
+  cors: {
+    origin: "https://decorease-ranitbag.onrender.com", // 👈 your frontend URL
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+});
+
 
 require("dotenv").config({
   path: "./.env",
 });
 
-app.use(cors());
+app.use(cors({
+  origin: "https://decorease-ranitbag.onrender.com",
+  credentials: true,
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
